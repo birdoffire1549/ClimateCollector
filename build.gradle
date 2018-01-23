@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.8
+group = "local.scottgriffis"
+version = "1.0.0"
+
+repositories {
+	mavenCentral()
+}
+
+sourceSets {
+    main {
+        java.srcDirs "src/main/java"
+	    resources.srcDirs "src/main/resources"
+    }
+
+    test {
+		java.srcDir "src/test/java"
+    }
+}
+
+dependencies {
+	compile 'mysql:mysql-connector-java:6.+@jar'
+	compile 'com.sun.jersey:jersey-client:+'
+	compile "log4j:log4j:1.+"
+	testCompile "junit:junit:4.11"
+}
